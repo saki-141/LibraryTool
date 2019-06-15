@@ -1,0 +1,241 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    width: 90%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/*header*/
+header {
+  height: 80px;
+  width: 100%;
+  background-color: rgba(255, 215, 0, 0.9);
+  position :relative;
+  top: 0;
+  z-index: 10;
+}
+
+.headr-left {
+    float: left;
+    margin-left:25px;
+}
+.header-left p{
+    float:left;
+    font-size:120%; 
+    color:white; 
+    padding: 8px 20px; 
+    border:1px solid white; 
+    border-radius: 5px; 
+    letter-spacing: 3px; 
+    font-weight:400;
+    width: 200px;
+}
+
+.header-right {
+  float: right;
+  margin-right:25px;
+}
+
+.header-right a {
+  line-height: 60px;
+  padding: 10px 25px;
+  color: white;
+  display: block;
+  float: right;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(200, 200, 0, 0.3);
+}
+
+/*body*/
+
+.top-wrapper {
+    width: 90%;
+    padding: 5px 5px;
+    color: white;
+    text-align: center;
+}
+
+.box1 {
+    position: relative;
+    margin: 2em 0;
+    padding: 8px 19px;
+    border:solid 3px #98FB98;
+    border-radius: 5px;
+    width:90%;
+}
+
+.box1 .box-title {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 2;
+    font-size: 14px;
+    background: #FFF;
+    color: #98FB98;
+    font-weight: bold;
+}
+
+.box1 p {
+    margin: 2px;
+    padding: 0;
+    font-size: 11pt;
+    color: black;
+    text-align: left;
+  }
+
+
+.find-form{
+    position: absolute;
+    width: 90%;
+    padding: 100 15px;
+    margin: 0 auto;
+    color: black;
+
+}
+
+.form1{
+    position:absolute;
+    left: 0;
+    bottom: 50%; 	
+    outline:0;	
+    height:30px;	
+    padding:0 10px; 	 
+    border-radius:5px 0 0 5px;		
+    background:#eee;
+}
+
+#input1{
+    width:60px;
+    height: 30px;
+    font-size:12px;
+    position:absolute;
+    left:150px;
+    bottom: 50%;
+    border-radius:0 3px 3px 0;  
+    background:#7fbfff; 
+    border:none;
+    color:#fff;
+    font-weight:bold;
+}
+
+#input1:hover{
+    color:#666;
+}
+
+
+/*テーブル表示*/
+.mid-wrapper{
+    width:100%; 
+}
+
+.index-table{
+    border-collapse:separate;
+    margin:2 right;
+}
+
+.index-th {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+    letter-spacing: 0.5px;
+    background-color: #6495ED;
+}
+
+td,th{
+  padding:10px;
+}
+
+.index-td {
+    font-size: 12px;
+    border-bottom:1px solid #80878e;
+}
+
+/*create.html*/
+
+.container-2{
+    width: 90%;
+}
+
+.add-table{
+    border-collapse:separate;
+    margin:2 right;
+}
+
+.add-th{
+    height: 30px;
+    padding: 5px;
+    font-size: 12px;
+    color: black;
+    text-align: right;
+}
+
+.add-td{
+    font-size: 12px;
+    border: none;
+}
+
+.add-form{	
+    outline:0;	
+    height:30px;	
+    width: 500px;
+    padding:0 1px; 	 
+    border-radius:3px;		
+    background:#eef;
+}
+
+#input2{
+    width: 120px;
+    height: 30px;
+    font-size:12px;
+    border-radius:3px;  
+    background:#7fbfff; 
+    border:none;
+    color:#fff;
+    font-weight:bold;
+}
+
+#input2:hover{
+    color:#666;
+}
+
+/* delete.html */
+.delete-obj{
+    width: 90%;
+}
+
+.dlt-th{
+    height: 30px;
+    padding: 5px;
+    font-size: 12px;
+    color: black;
+    text-align: right;
+}
+
+.dlt-td{
+    width: 300px;
+    font-size: 12px;
+    padding:0 1px; 	 
+    border-radius:3px;		
+    background:#eef;
+}

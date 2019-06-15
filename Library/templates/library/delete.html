@@ -1,0 +1,57 @@
+{% load static %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'library/css/style.css' %}" />
+</head>
+<body>
+    <header>
+     <div class="container">
+            <div class="header-left"><p>{{title}}</p></div>
+        </div>   
+    </header>
+    <div class="container-2">
+        <p>以下のレコードを削除します</p>
+    <table class="delete-table">
+        <tr>
+            <th class="dlt-th">Title</th>
+            <td class="dlt-td">{{obj.title}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Author</th>
+            <td class="dlt-td">{{obj.author}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Publisher</th>
+            <td class="dlt-td">{{obj.publisher}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Tag1</th>
+            <td class="dlt-td">{{obj.tag1}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Tag2</th>
+            <td class="dlt-td">{{obj.tag2}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Tag3</th>
+            <td class="dlt-td">{{obj.tag3}}</td>
+        </tr>
+        <tr>
+            <th class="dlt-th">Status</th>
+            <td class="dlt-td">{% if obj.status == 0 %}available{% endif %}
+            {% if obj.status != 0 %}{{obj.status}}{% endif %}</td>
+        </tr>
+        <form action ="{% url 'delete' id %}" method="post">
+        {% csrf_token %}
+        <tr>
+            <td></td>
+            <td><input id="input2" type="submit" value="Delete"></td></tr>
+        </form>
+    </table>
+</body>
+</html>

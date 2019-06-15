@@ -1,0 +1,68 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'library/css/style.css' %}" />
+</head>
+  
+<body>
+    <header>
+        <div class="container">
+            <div class="header-left"><p>{{title}}</p></div>
+            <div class="header-right">
+                <a href="{%url 'create' %}">Add</a>
+                <a href="#">Delete</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="top-wrapper">
+            <div class="box1">
+                <span class="box-title">Caution!!</span>
+                    <p></p>
+                    <p class="box-text">ここにライブラリ利用のルールを記載する</p>
+            </div>
+           　<div class="find-form">
+                <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                {{ form.find|add_class:'form1' }}
+                <input id="input1" type="submit" value="search">
+                </form>
+            </div> 
+        </div>
+            
+         <div class="mid-wrapper">
+            <table class="index-table">
+                <tr>
+                    <th class="index-th">ID</th>
+                    <th class="index-th">title</th>
+                    <th class="index-th">author</th>
+                    <th class="index-th">publisher</th>
+                    <th class="index-th">tag</th>
+                    <th class="index-th">status</th>
+                    <th class="index-th">detail</th>
+                    <th class="index-th">update</th>
+                </tr>
+            {% for item in data %}
+                <tr>
+                    <td class="index-td">{{item.id}}</td>
+                    <td class="index-td">{{item.title}}</td>
+                    <td class="index-td">{{item.author}}</td>
+                    <td class="index-td">{{item.publisher}}</td>
+                    <td class="index-td">{{item.tag1}},{{item.tag2}},{{item.tag3}}</td>
+                    <td class="index-td">{%if item.status == 0 %}available{% endif %}
+                    {% if item.status != 0 %}{{item.status}}{% endif %}</td>
+                    <td class="index-td"><a href="{{item.link}}">■</a></td>
+                    <td class="index-td"><a href="{% url 'edit' item.id %}">■</a></td>
+                </tr>
+            {% endfor %}
+            </table>            
+        </div>
+    </div>
+</body>
+</html>
